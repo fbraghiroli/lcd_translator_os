@@ -523,5 +523,9 @@ int stm32_bringup(void)
   usbdev_adb_initialize();
 #endif
 
+#ifdef CONFIG_CDCACM
+  cdcacm_initialize(0, NULL);
+#endif
+
   return ret;
 }
